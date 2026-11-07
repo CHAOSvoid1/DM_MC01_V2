@@ -96,6 +96,110 @@ system_status_t mx_system_init(void)
     Peripheral init section
   */
 
+  /** Cortex_DEBUG */
+  if (mx_cortex_debug_init() != SYSTEM_OK)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** gpio_default */
+  if (mx_gpio_default_init() != SYSTEM_OK)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** Cortex_Systick: _init() has not been generated */
+
+  /** ADC1 */
+  if (mx_adc1_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** ADC2 */
+  if (mx_adc2_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** FDCAN1 */
+  if (mx_fdcan1_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** FDCAN2 */
+  if (mx_fdcan2_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** USB_DRD_FS_DEVICE */
+  if (mx_usb_drd_fs_device_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** USART2 */
+  if (mx_usart2_uart_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** UART5 */
+  if (mx_uart5_uart_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** TIM3 */
+  if (mx_tim3_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** SPI2 */
+  if (mx_spi2_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** TIM2 */
+  if (mx_tim2_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** USART1 */
+  if (mx_usart1_uart_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** USART3 */
+  if (mx_usart3_uart_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** TIM8 */
+  if (mx_tim8_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** UART7 */
+  if (mx_uart7_uart_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
+  /** SPI1 */
+  if (mx_spi1_init() == NULL)
+  {
+    return SYSTEM_PERIPHERAL_ERROR;
+  }
+
   if (post_system_init_hook() != SYSTEM_OK)
   {
     return SYSTEM_POSTSYSTEM_ERROR;

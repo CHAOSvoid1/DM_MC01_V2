@@ -100,12 +100,12 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_ADC Config #################################### */
-#define USE_HAL_ADC_MODULE                      0U
+#define USE_HAL_ADC_MODULE                      1U
 #define USE_HAL_ADC_CLK_ENABLE_MODEL            HAL_CLK_ENABLE_NO
 #define USE_HAL_ADC_REGISTER_CALLBACKS          0U
 #define USE_HAL_ADC_USER_DATA                   0U
 #define USE_HAL_ADC_GET_LAST_ERRORS             0U
-#define USE_HAL_ADC_DMA                         0U
+#define USE_HAL_ADC_DMA                         1U
 /**
   * @}
   */
@@ -234,11 +234,11 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_DMA Config #################################### */
-#define USE_HAL_DMA_MODULE                      0U
+#define USE_HAL_DMA_MODULE                      1U
 #define USE_HAL_DMA_CLK_ENABLE_MODEL            HAL_CLK_ENABLE_NO
 #define USE_HAL_DMA_USER_DATA                   0U
 #define USE_HAL_DMA_GET_LAST_ERRORS             0U
-#define USE_HAL_DMA_LINKEDLIST                  0U
+#define USE_HAL_DMA_LINKEDLIST                  1U
 /**
   * @}
   */
@@ -263,9 +263,9 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_EXTI Config ################################### */
-#define USE_HAL_EXTI_MODULE                     0U
-#define USE_HAL_EXTI_REGISTER_CALLBACKS         0U
-#define USE_HAL_EXTI_USER_DATA                  0U
+#define USE_HAL_EXTI_MODULE                     1U
+#define USE_HAL_EXTI_REGISTER_CALLBACKS         1U
+#define USE_HAL_EXTI_USER_DATA                  1U
 /**
   * @}
   */
@@ -274,7 +274,7 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_FDCAN Config ################################## */
-#define USE_HAL_FDCAN_MODULE                    0U
+#define USE_HAL_FDCAN_MODULE                    1U
 #define USE_HAL_FDCAN_CLK_ENABLE_MODEL          HAL_CLK_ENABLE_NO
 #define USE_HAL_FDCAN_REGISTER_CALLBACKS        0U
 #define USE_HAL_FDCAN_USER_DATA                 0U
@@ -314,7 +314,7 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_GPIO Config ################################### */
-#define USE_HAL_GPIO_MODULE                     0U
+#define USE_HAL_GPIO_MODULE                     1U
 #define USE_HAL_GPIO_CLK_ENABLE_MODEL           HAL_CLK_ENABLE_NO
 /**
   * @}
@@ -455,7 +455,7 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_PCD Config #################################### */
-#define USE_HAL_PCD_MODULE                      0U
+#define USE_HAL_PCD_MODULE                      1U
 #define USE_HAL_PCD_REGISTER_CALLBACKS          0U
 #define USE_HAL_PCD_USER_DATA                   0U
 #define USE_HAL_PCD_GET_LAST_ERRORS             0U
@@ -576,12 +576,12 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_SPI Config #################################### */
-#define USE_HAL_SPI_MODULE                      0U
+#define USE_HAL_SPI_MODULE                      1U
 #define USE_HAL_SPI_CLK_ENABLE_MODEL            HAL_CLK_ENABLE_NO
 #define USE_HAL_SPI_REGISTER_CALLBACKS          0U
 #define USE_HAL_SPI_USER_DATA                   0U
 #define USE_HAL_SPI_GET_LAST_ERRORS             0U
-#define USE_HAL_SPI_DMA                         0U
+#define USE_HAL_SPI_DMA                         1U
 /* CRC FEATURE: Use to activate CRC feature inside HAL SPI Driver
  * Activated: CRC code is present inside driver
  * Deactivated: CRC code cleaned from driver
@@ -604,7 +604,7 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_TIM Config #################################### */
-#define USE_HAL_TIM_MODULE                      0U
+#define USE_HAL_TIM_MODULE                      1U
 #define USE_HAL_TIM_CLK_ENABLE_MODEL            HAL_CLK_ENABLE_NO
 #define USE_HAL_TIM_REGISTER_CALLBACKS          0U
 #define USE_HAL_TIM_USER_DATA                   0U
@@ -618,12 +618,12 @@ extern "C" {
   * @{
   */
 /* ########################## HAL_UART Config ################################### */
-#define USE_HAL_UART_MODULE                     0U
+#define USE_HAL_UART_MODULE                     1U
 #define USE_HAL_UART_CLK_ENABLE_MODEL           HAL_CLK_ENABLE_NO
 #define USE_HAL_UART_REGISTER_CALLBACKS         0U
 #define USE_HAL_UART_USER_DATA                  0U
 #define USE_HAL_UART_GET_LAST_ERRORS            0U
-#define USE_HAL_UART_DMA                        0U
+#define USE_HAL_UART_DMA                        1U
 /**
   * @}
   */

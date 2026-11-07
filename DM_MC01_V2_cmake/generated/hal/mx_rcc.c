@@ -32,7 +32,7 @@
 /**
   * Configure the system core clock only and activate it using the HAL RCC unitary APIs (footprint optimization)
   *         The system Clock is configured as follow :
-  *            System Clock source            = PSIS
+  *            System Clock source            = HSIS
   *            SYSCLK(Hz)                     = 144000000
   *            HCLK(Hz)                       = 144000000
   *            AHB Prescaler                  = 1
@@ -44,20 +44,6 @@
 system_status_t mx_rcc_init(void)
 {
   if (HAL_RCC_HSIS_Enable() != HAL_OK)
-  {
-    return SYSTEM_CLOCK_ERROR;
-  }
-
-    hal_rcc_psi_config_t config_psi;
-  config_psi.psi_source = HAL_RCC_PSI_SRC_HSI_8MHz;
-  config_psi.psi_ref = HAL_RCC_PSI_REF_8MHZ;
-  config_psi.psi_out = HAL_RCC_PSI_OUT_144MHZ;
-  if (HAL_RCC_PSI_SetConfig(&config_psi) != HAL_OK)
-  {
-    return SYSTEM_CLOCK_ERROR;
-  }
-
-  if (HAL_RCC_PSIS_Enable() != HAL_OK)
   {
     return SYSTEM_CLOCK_ERROR;
   }
@@ -76,7 +62,7 @@ system_status_t mx_rcc_init(void)
   /** Frequency will be increased */
   HAL_FLASH_ITF_SetLatency(HAL_FLASH, HAL_FLASH_ITF_LATENCY_4);
 
-  if (HAL_RCC_SetSYSCLKSource(HAL_RCC_SYSCLK_SRC_PSIS) != HAL_OK)
+  if (HAL_RCC_SetSYSCLKSource(HAL_RCC_SYSCLK_SRC_HSIS) != HAL_OK)
   {
     return SYSTEM_CLOCK_ERROR;
   }
@@ -103,5 +89,60 @@ void mx_rcc_deinit(void)
   */
 system_status_t mx_rcc_peripherals_clock_config(void)
 {
+  /* Peripherals using PCLK1 (144 MHz):
+    USART2
+    UART5
+    SPI2
+    USART3
+    UART7
+  */
+
+  /* Peripherals using PCLK2 (144 MHz):
+    USART1
+    SPI1
+  */
+
+  /* Peripherals using HSIDIV3 (48 MHz):
+    USB_DRD_FS
+  */
+  if (HAL_RCC_HSIDIV3_Enable() != HAL_OK)
+  {
+    return SYSTEM_CLOCK_ERROR;
+  }
+
+  /* Peripherals using PSIS (160 MHz):
+    ADC1
+    ADC2
+    FDCAN1
+    FDCAN2
+  */
+  if (HAL_RCC_HSE_Enable(HAL_RCC_HSE_ON) != HAL_OK)
+  {
+    return SYSTEM_CLOCK_ERROR;
+  }
+
+    hal_rcc_psi_config_t config_psi;
+  config_psi.psi_source = HAL_RCC_PSI_SRC_HSE;
+  config_psi.psi_ref = HAL_RCC_PSI_REF_8MHZ;
+  config_psi.psi_out = HAL_RCC_PSI_OUT_160MHZ;
+  if (HAL_RCC_PSI_SetConfig(&config_psi) != HAL_OK)
+  {
+    return SYSTEM_CLOCK_ERROR;
+  }
+
+  if (HAL_RCC_PSIS_Enable() != HAL_OK)
+  {
+    return SYSTEM_CLOCK_ERROR;
+  }
+
+  /* Peripherals using ADC_DAC_DIV (40 MHz):
+    ADC1
+    ADC2
+  */
+  if (HAL_RCC_ADCDAC_SetKernelClkPrescaler(HAL_RCC_ADCDAC_PRESCALER4) != HAL_OK)
+  {
+    return SYSTEM_CLOCK_ERROR;
+  }
+
   return SYSTEM_OK;
 }

@@ -1068,7 +1068,7 @@
     },
     "HAL_CORTEX_PROJECT_USE_HAL": {
       "name": "HAL_CORTEX_PROJECT_USE_HAL",
-      "value": 28,
+      "value": 27,
       "originator": "sw-config-semaphore"
     },
     "HAL_ICACHE_CORE_ENABLED": {
@@ -1238,7 +1238,8 @@
       }
     },
     "lastUsedFormat": "CMake"
-  }
+  },
+  "version": 2
 }"""
 "File: .settings/exti.store.json" = """
 {
@@ -1288,7 +1289,7 @@
 }"""
 "File: .settings/nvic.store.json" = """
 {
-  "version": 1,
+  "version": 4,
   "configurations": [
     {
       "projectId": "221b8ddd-b2b7-4a03-94c0-e5989cd20a84",
@@ -1440,13 +1441,6 @@
           "used": true
         },
         {
-          "id": 85,
-          "name": "TIM8_CC",
-          "priority": 0,
-          "subpriority": 0,
-          "used": true
-        },
-        {
           "id": 88,
           "name": "LPDMA2_CH0",
           "priority": 0,
@@ -1583,11 +1577,6 @@
           "needId": "bc1d3102-ccf4-4d5d-af2c-278446161f9d",
           "destination": "LPDMA1_CH7",
           "owner": "LPDMA1_CH7"
-        },
-        {
-          "needId": "3b303358-5d88-438a-b347-6bb9ec77a6a9",
-          "destination": "TIM8_CC",
-          "owner": "TIM8"
         },
         {
           "needId": "d37bca87-28bb-49b4-9366-214af8699673",
@@ -1791,16 +1780,6 @@
       "selector": "*",
       "id": "bc1d3102-ccf4-4d5d-af2c-278446161f9d",
       "owner": "LPDMA1_CH7",
-      "propertyPath": ""
-    },
-    {
-      "needType": "need.interrupt.lines",
-      "projectUri": "cube:39fecc0a-2896-4daa-8906-beb8fe01cb1d/221b8ddd-b2b7-4a03-94c0-e5989cd20a84",
-      "componentId": "STMicroelectronics.stm32c5xx_hal_drivers.2.1.0$STMicroelectronics::Device:STM32CubeMX2 Config:TIM@2.1.0#HAL CORE GPIO DMA Init and TIM",
-      "componentInstanceId": "2975c469-d6f6-4e05-987c-12646937b6f1",
-      "selector": "CC",
-      "id": "3b303358-5d88-438a-b347-6bb9ec77a6a9",
-      "owner": "TIM8",
       "propertyPath": ""
     },
     {
@@ -3988,33 +3967,6 @@
   ],
   "pinout-user-settings": {}
 }"""
-"File: STM32C593RET6_project/.settings/hw-composition.store.json" = """
-{
-  "name": "STM32C593RET6_project",
-  "boards": [
-    {
-      "type": "VIRTUAL",
-      "mcuUID": "STMicroelectronics.stm32c5xx_dfp.2.1.0$STMicroelectronics:13::STM32C593RET6",
-      "uid": "5bc36631-0504-453f-9dd1-b183bd7a9c7f"
-    }
-  ],
-  "version": 3,
-  "constraints": []
-}"""
-"File: STM32C593RET6_project/STM32C593RET6_project.hw" = '""'
-"File: STM32C593RET6_project/project.cube" = """
-{
-  "traits": [
-    {
-      "files": [
-        "STM32C593RET6_project.hw"
-      ],
-      "name": "hardware",
-      "id": "bf7717e6-07f3-4848-a074-f936711d9523"
-    }
-  ],
-  "children": []
-}"""
 "File: DM_MC01_V2.csolution.yml" = """
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.11.0/tools/projmgr/schemas/csolution.schema.json
 solution:
@@ -4056,6 +4008,33 @@ solution:
     - pack: STMicroelectronics::syscalls@2.0.0
     - pack: STMicroelectronics::usbx@2.1.0
 """
+"File: STM32C593RET6_project/.settings/hw-composition.store.json" = """
+{\r
+  "name": "STM32C593RET6_project",\r
+  "boards": [\r
+    {\r
+      "type": "VIRTUAL",\r
+      "mcuUID": "STMicroelectronics.stm32c5xx_dfp.2.1.0$STMicroelectronics:13::STM32C593RET6",\r
+      "uid": "5bc36631-0504-453f-9dd1-b183bd7a9c7f"\r
+    }\r
+  ],\r
+  "version": 3,\r
+  "constraints": []\r
+}"""
+"File: STM32C593RET6_project/STM32C593RET6_project.hw" = '""'
+"File: STM32C593RET6_project/project.cube" = """
+{\r
+  "traits": [\r
+    {\r
+      "files": [\r
+        "STM32C593RET6_project.hw"\r
+      ],\r
+      "name": "hardware",\r
+      "id": "bf7717e6-07f3-4848-a074-f936711d9523"\r
+    }\r
+  ],\r
+  "children": []\r
+}"""
 "File: project.cube" = """
 {
   "traits": [
@@ -8474,21 +8453,7 @@ solution:
                   "enable_interruption_brk_terr_ierr": false,
                   "enable_interruption_cc": false,
                   "enable_interruption_trgi_com_dir_idx": false,
-                  "enable_interruption_upd": false,
-                  "irq_handler_generation_cc": false,
-                  "nvic_config_cc": {
-                    "needs": [
-                      {
-                        "needType": "need.interrupt.lines",
-                        "projectUri": "cube:39fecc0a-2896-4daa-8906-beb8fe01cb1d/221b8ddd-b2b7-4a03-94c0-e5989cd20a84",
-                        "componentId": "STMicroelectronics.stm32c5xx_hal_drivers.2.1.0$STMicroelectronics::Device:STM32CubeMX2 Config:TIM@2.1.0#HAL CORE GPIO DMA Init and TIM",
-                        "componentInstanceId": "2975c469-d6f6-4e05-987c-12646937b6f1",
-                        "selector": "CC",
-                        "id": "3b303358-5d88-438a-b347-6bb9ec77a6a9",
-                        "owner": "TIM8"
-                      }
-                    ]
-                  }
+                  "enable_interruption_upd": false
                 },
                 "dma": {
                   "enable_dma_upd": false,
@@ -10976,4 +10941,4 @@ project:
 ["Project Description"]
 workingAreaId = "78919e22-c379-4cef-8d2c-4903f0ba129d"
 version = "1"
-mx2Version = "1.1.1"
+mx2Version = "1.2.0"
