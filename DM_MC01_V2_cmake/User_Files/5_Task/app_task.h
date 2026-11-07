@@ -11,6 +11,18 @@
 #ifndef APP_TASK_H
 #define APP_TASK_H
 
+#include <stdint.h>
+
+typedef struct
+{
+    uint32_t initialized;
+    uint32_t uptime_ms;
+    uint32_t loop_count;
+    uint32_t heartbeat_count;
+} app_test_status_t;
+
+extern volatile app_test_status_t app_test_status;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
