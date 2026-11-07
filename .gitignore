@@ -1,0 +1,22 @@
+# Build output
+**/build/
+**/cmake-build-*/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/compile_commands.json
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.obj
+*.su
+
+# Local IDE and toolchain settings
+**/.idea/
+**/CMakeUserPresets.json
+
+# Temporary files
+*.log
+*.tmp
+*~
