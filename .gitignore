@@ -22,3 +22,10 @@
 *~
 
 **/build.before-move/
+
+**/CMakeUserPresets.json.backup
+
+/Toolchain/
+/DM_MC01_V2-tools*.zip
+**/tools/local-openocd.cfg
+/DM_MC01_V2-tools*.zip.sha256
